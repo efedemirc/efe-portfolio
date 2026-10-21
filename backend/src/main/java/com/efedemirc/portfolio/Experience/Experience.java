@@ -11,11 +11,14 @@ public class Experience {
     @Id 
     private Long id;
 
-    @Column(name = "company_name", nullable = false)
+    @Column(name = "company", nullable = false)
     private String companyName;
 
-    @Column(name = "job_title", nullable = false)
+    @Column(name = "role", nullable = false)
     private String jobTitle;    
+
+    @Column (name = "location", nullable = false)
+    private String location;
 
     @Column (nullable = false, columnDefinition = "text")
     private String jobDescription;
@@ -46,6 +49,10 @@ public class Experience {
         return jobDescription;
     }
 
+    public String getLocation() {
+        return location;
+    }
+
     public String getStartDate() {
         return startDate;
     }
@@ -54,6 +61,6 @@ public class Experience {
         return endDate;
     }
 
-    
+
 }
 
