@@ -3,7 +3,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "experiences")
@@ -24,10 +24,10 @@ public class Experience {
     private String jobDescription;
 
     @Column(name = "start_date", nullable = false)
-    private String startDate;
+    private LocalDate startDate;
 
     @Column(name = "end_date")
-    private String endDate;
+    private LocalDate endDate;
 
     protected Experience() {
         // required by JPA
@@ -53,11 +53,11 @@ public class Experience {
         return location;
     }
 
-    public String getStartDate() {
+    public LocalDate getStartDate() {
         return startDate;
     }
 
-    public String getEndDate() {
+    public LocalDate getEndDate() {
         return endDate;
     }
 
