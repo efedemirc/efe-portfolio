@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: portfolio-backend
+  # Values come from environment variables. The defaults after ":" are only
+  # for local development with docker compose; real secrets never go here.
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/portfolio}
+    username: ${DB_USER:portfolio}
+    password: ${DB_PASSWORD:portfolio}
+  jpa:
+    open-in-view: false
+    hibernate:
+      # Flyway owns the schema; Hibernate only checks that entities match it.
+      ddl-auto: validate
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
