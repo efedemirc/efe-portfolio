@@ -1,5 +1,6 @@
 package com.efedemirc.portfolio.experience;
 
+import jakarta.annotation.Generated;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -7,9 +8,11 @@ import jakarta.persistence.Table;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "experiences")
-public class Experience {
+@Table(name = "experience")
+public class Experience { 
+
     @Id 
+    @Generated(value = "org.hibernate.id.UUIDGenerator")
     private Long id;
 
     @Column(name = "company", nullable = false)
@@ -18,10 +21,10 @@ public class Experience {
     @Column(name = "role", nullable = false)
     private String jobTitle;    
 
-    @Column (name = "location", nullable = false)
+    @Column (name = "location")
     private String location;
 
-    @Column (nullable = false, columnDefinition = "text")
+    @Column (name = "description", nullable = false, columnDefinition = "text")
     private String jobDescription;
 
     @Column(name = "start_date", nullable = false)
