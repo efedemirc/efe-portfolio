@@ -1,8 +1,8 @@
 package com.efedemirc.portfolio.experience;
-
-import jakarta.annotation.Generated;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import java.time.LocalDate;
@@ -11,8 +11,8 @@ import java.time.LocalDate;
 @Table(name = "experience")
 public class Experience { 
 
-    @Id 
-    @Generated(value = "org.hibernate.id.UUIDGenerator")
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "company", nullable = false)
